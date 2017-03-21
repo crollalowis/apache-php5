@@ -1,12 +1,18 @@
-FROM ubuntu:latest
+# FROM ubuntu:latest
+FROM ubuntu:trusty
 
-MAINTAINER Christian Maniewski "c.maniewski@crolla-lowis.de"
+MAINTAINER Richard Hoffmann "r.hoffmann@crolla-lowis.de"
 
-RUN apt-get -y install software-properties-common
-RUN add-apt-repository -y ppa:ufirst/php5
 RUN apt-get update
 
-RUN apt-get -y install apache2 php5-fpm php5-mysql php5-imagick php5-imap php5-mcrypt php5-curl php5-cli php5-gd php5-pgsql php5-sqlite php5-common php-pear curl php5-json memcached php5-memcache php5-xdebug
+RUN apt-get -y install software-properties-common
+# RUN apt-get -y install python3-software-properties
+# RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+# RUN add-apt-repository -y ppa:ufirst/php5
+RUN add-apt-repository -y ppa:ondrej/php
+RUN apt-get update
+
+RUN apt-get -y install apache2 php5.6-fpm php5.6-mysql php5.6-imagick php5.6-imap php5.6-mcrypt php5.6-curl php5.6-cli php5.6-gd php5.6-pgsql php5.6-sqlite php5.6-common php-pear curl php5.6-json memcached php5.6-memcache php5.6-xdebug
 
 # RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/
