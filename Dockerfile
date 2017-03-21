@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:trusty
 
 MAINTAINER Christian Maniewski "c.maniewski@crolla-lowis.de"
 
