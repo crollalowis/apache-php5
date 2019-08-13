@@ -2,6 +2,7 @@ FROM ubuntu:trusty
 
 MAINTAINER Christian Maniewski "c.maniewski@crolla-lowis.de"
 
+RUN apt-get update
 RUN apt-get -y install software-properties-common
 RUN add-apt-repository -y ppa:ufirst/php5
 RUN apt-get update
